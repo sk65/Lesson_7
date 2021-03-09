@@ -6,6 +6,9 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+    dexOptions {
+        javaMaxHeapSize "1000mb"
+    }
     defaultConfig {
         applicationId "com.example.lesson_7"
         minSdkVersion 19

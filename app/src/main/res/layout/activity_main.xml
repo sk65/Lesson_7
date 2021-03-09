@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout_mainActivity_toolBarContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
@@ -9,7 +10,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout_mainActivity"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -27,17 +28,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout_mainActivity"
-        app:layout_constraintVertical_bias="0.26">
+        app:layout_constraintVertical_bias="0.0">
 
         <TableRow>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:text="@string/slash"
                 android:textSize="30sp" />
@@ -45,7 +52,11 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:text="@string/arrayList"
                 android:textSize="30sp" />
@@ -53,7 +64,11 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:text="@string/linkedList"
                 android:textSize="30sp" />
@@ -62,7 +77,11 @@
                 android:id="@+id/textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:text="@string/copyOnWriteArrayList"
                 android:textSize="30sp" />
@@ -73,7 +92,11 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:text="@string/add"
                 android:textSize="30sp" />
@@ -82,7 +105,11 @@
                 android:id="@+id/textView_activityMain_arAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:textSize="30sp" />
 
@@ -90,7 +117,11 @@
                 android:id="@+id/textView_activityMain_linAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:textSize="30sp" />
 
@@ -98,7 +129,11 @@
                 android:id="@+id/textView_activityMain_copAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:textSize="30sp" />
         </TableRow>
@@ -108,16 +143,24 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:text="@string/rem"
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/textViev_activityMain_arRem"
+                android:id="@+id/textView_activityMain_arRem"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:textSize="30sp" />
 
@@ -125,7 +168,11 @@
                 android:id="@+id/textView_activityMain_linRem"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:textSize="30sp" />
 
@@ -133,7 +180,11 @@
                 android:id="@+id/textView_activityMain_copRem"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:textSize="30sp" />
         </TableRow>
@@ -143,7 +194,11 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:text="@string/ser"
                 android:textSize="30sp" />
@@ -152,7 +207,12 @@
                 android:id="@+id/textView_activityMain_arSer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:textSize="30sp" />
 
@@ -160,7 +220,12 @@
                 android:id="@+id/textView_activityMain_linSer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
                 android:layout_weight="4"
+                android:background="@color/white"
+                android:gravity="center"
                 android:padding="10dp"
                 android:textSize="30sp" />
 
@@ -168,20 +233,13 @@
                 android:id="@+id/textView_activityMain_copSer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="1dp"
                 android:layout_weight="4"
+                android:gravity="center"
+                android:background="@color/white"
                 android:padding="10dp"
                 android:textSize="30sp" />
         </TableRow>
     </TableLayout>
-
-    <Button
-        android:id="@+id/button_mainActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="83dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout_mainActivity"
-        tools:text="button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

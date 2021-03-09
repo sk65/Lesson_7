@@ -1,13 +1,17 @@
 package com.example.lesson_7.view;
 
 import android.os.Bundle;
-import android.widget.Button;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.lesson_7.R;
 import com.example.lesson_7.contract.MainActivityContract;
+import com.example.lesson_7.model.Lists;
 import com.example.lesson_7.presenter.MainActivityPresenter;
 
 public class MainActivity extends AppCompatActivity implements MainActivityContract.View {
@@ -21,8 +25,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     private TextView textViewCopRem;
     private TextView textViewCopSer;
 
-
-    private Button button;
     private MainActivityContract.Presenter presenter;
 
     @Override
@@ -34,8 +36,10 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
 
     @Override
     public void initView() {
+        setSupportActionBar(findViewById(R.id.toolbar_mainActivity));
+
         textViewArAdd = findViewById(R.id.textView_activityMain_arAdd);
-        textViewArRem = findViewById(R.id.textViev_activityMain_arRem);
+        textViewArRem = findViewById(R.id.textView_activityMain_arRem);
         textViewArSer = findViewById(R.id.textView_activityMain_arSer);
 
         textViewLinAdd = findViewById(R.id.textView_activityMain_linAdd);
@@ -46,53 +50,53 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         textViewCopRem = findViewById(R.id.textView_activityMain_copRem);
         textViewCopSer = findViewById(R.id.textView_activityMain_copSer);
 
-        button = findViewById(R.id.button_mainActivity);
-        button.setOnClickListener((v) -> presenter.onClick(v));
     }
 
     @Override
-    public void setTextViewArAdd(String time) {
-        runOnUiThread(() -> textViewArAdd.setText(time));
+    public void setTime(String time, Lists enumList) {
+        switch (enumList) {
+            case LINKED_LIST_ADD:
+                runOnUiThread(() -> textViewLinAdd.setText(time));
+                break;
+            case LINKED_LIST_SER:
+                runOnUiThread(() -> textViewLinSer.setText(time));
+                break;
+            case LINKED_LIST_REM:
+                runOnUiThread(() -> textViewLinRem.setText(time));
+                break;
+            case ARRAY_LIST_REM:
+                runOnUiThread(() -> textViewArRem.setText(time));
+                break;
+            case ARRAY_LIST_SER:
+                runOnUiThread(() -> textViewArSer.setText(time));
+                break;
+            case ARRAY_LIST_ADD:
+                runOnUiThread(() -> textViewArAdd.setText(time));
+                break;
+            case COPY_ON_WRITE_ARRAY_LIST_ADD:
+                runOnUiThread(() -> textViewCopAdd.setText(time));
+                break;
+            case COPY_ON_WRITE_ARRAY_LIST_REM:
+                runOnUiThread(() -> textViewCopRem.setText(time));
+                break;
+            case COPY_ON_WRITE_ARRAY_LIST_SER:
+                runOnUiThread(() -> textViewCopSer.setText(time));
+                break;
+        }
     }
 
     @Override
-    public void setTextViewArRem(String time) {
-        runOnUiThread(() -> textViewArRem.setText(time));
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_menu, menu);
+        return true;
     }
 
-    @Override
-    public void setTextViewArSer(String time) {
-        runOnUiThread(() -> textViewArSer.setText(time));
-    }
-
-    @Override
-    public void setTextViewLinAdd(String time) {
-        runOnUiThread(() -> textViewLinAdd.setText(time));
-    }
-
-    @Override
-    public void setTextViewLinRem(String time) {
-        runOnUiThread(() -> textViewLinRem.setText(time));
-    }
-
-    @Override
-    public void setTextViewLinSer(String time) {
-        runOnUiThread(() -> textViewLinSer.setText(time));
-    }
-
-    @Override
-    public void setTextViewCopAdd(String time) {
-        runOnUiThread(() -> textViewCopAdd.setText(time));
-    }
-
-    @Override
-    public void setTextViewCopRem(String time) {
-        runOnUiThread(() -> textViewCopRem.setText(time));
-    }
-
-    @Override
-    public void setTextViewCopSer(String time) {
-        runOnUiThread(() -> textViewCopSer.setText(time));
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.call) {
+            presenter.initWorkTimeLists();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
