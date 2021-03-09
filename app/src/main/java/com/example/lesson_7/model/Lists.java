@@ -1,0 +1,15 @@
+package com.example.lesson_7.model;
+
+public enum Lists {
+    ARRAY_LIST_ADD,
+    ARRAY_LIST_SER,
+    ARRAY_LIST_REM,
+
+    LINKED_LIST_ADD,
+    LINKED_LIST_SER,
+    LINKED_LIST_REM,
+
+    COPY_ON_WRITE_ARRAY_LIST_ADD,
+    COPY_ON_WRITE_ARRAY_LIST_SER,
+    COPY_ON_WRITE_ARRAY_LIST_REM
+}
